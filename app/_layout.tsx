@@ -11,11 +11,22 @@ export default function RootLayout() {
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => 
-    {
+    const loadSession = async () => {
+      const start = Date.now();
+
+      const { data: { session } } = await supabase.auth.getSession();
+
       setSession(session);
-      setInitialized(true);
-    });
+
+      const elapsed = Date.now() - start;
+      const remaining = 750 - elapsed;
+
+      setTimeout(() => {
+        setInitialized(true);
+      }, remaining > 0 ? remaining: 0);
+    };
+
+    loadSession();
 
   const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => 
   {
@@ -43,10 +54,8 @@ export default function RootLayout() {
     }
   }, [session, segments, initialized]);
   
-  if (!initialized)
-  {
-    return 
-    (
+  if (!initialized) {
+    return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" color="#0000ff" />
       </View>
