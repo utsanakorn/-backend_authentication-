@@ -18,19 +18,20 @@
 4. Run the app
    npx expo start
 
-## Supabase Configuration
+## Supabase Setup Notes
 
 - Authentication: Email/Password enabled (default)
 - Credentials stored in .env (not committed to GitHub)
+- Sessions are persisted using Asyncstorage
 
-## How to Test:
+## Testing:
 
 1. Create an account (Sign-Up)
 2. Sign in with valid credentials
 3. Verify redirect to Home Screen
-4. Close and reopen the app and session should stlil persist
+4. Close and reopen the app and session should still persist
 5. Sign out returns you to the Sign-in page
-6. Try to access protected routes while logged out should redirect you to sign in page.
+6. Trying to access protected routes while logged out should redirect you to sign-in page.
 
 ## Team
 
