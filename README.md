@@ -10,8 +10,10 @@ npm install --legacy-peer-deps
 3. Create environment variables
 Create a .env file in the root directory and add:
 
-   EXPO\_PUBLIC\_SUPABASE\_URL=your\_project\_url
+EXPO\_PUBLIC\_SUPABASE\_URL=your\_project\_url
 EXPO\_PUBLIC\_SUPABASE\_ANON\_KEY=your\_anon\_key
+
+OR edit .env.example, fill in your own supabase credentials and change filename to .env
 
 4. Run the app
 npx expo start
