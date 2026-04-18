@@ -3,28 +3,26 @@
 ## Setup
 
 1. Clone the repo
-   git clone https://github.com/utsanakorn/-backend_authentication-.git
-   cd -backend_authentication-
-
+git clone https://github.com/utsanakorn/-backend\_authentication-.git
+cd -backend\_authentication-
 2. Install dependencies
-   npm install --legacy-peer-deps
-
+npm install --legacy-peer-deps
 3. Create environment variables
-   Create a .env file in the root directory and add:
+Create a .env file in the root directory and add:
 
-   EXPO_PUBLIC_SUPABASE_URL=your_project_url
-   EXPO_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+   EXPO\_PUBLIC\_SUPABASE\_URL=your\_project\_url
+EXPO\_PUBLIC\_SUPABASE\_ANON\_KEY=your\_anon\_key
 
 4. Run the app
-   npx expo start
+npx expo start
 
-## Supabase Setup Notes
+   ## Supabase Setup Notes
 
-- Authentication: Email/Password enabled (default)
-- Credentials stored in .env (not committed to GitHub)
-- Sessions are persisted using Asyncstorage
+* Authentication: Email/Password enabled (default)
+* Credentials stored in .env (not committed to GitHub)
+* Sessions are persisted using Asyncstorage
 
-## Testing:
+  ## Testing:
 
 1. Create an account (Sign-Up)
 2. Sign in with valid credentials
@@ -33,8 +31,3 @@
 5. Sign out returns you to the Sign-in page
 6. Trying to access protected routes while logged out should redirect you to sign-in page.
 
-## Team
-
-- Person 1 (Kate): Sign-In, Sign-Up screens, Supabase client
-- Person 2: Protected navigation, Session handling, Sign-Out
-- Person 3: Supabase setup, README, repo management
